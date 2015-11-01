@@ -35,3 +35,5 @@ sub deserialize {
 =head1 SEE ALSO
 
 L<Data::Serializer>
+
+L<Data::Dmp>
