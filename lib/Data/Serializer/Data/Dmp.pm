@@ -11,21 +11,20 @@ use parent 'Data::Serializer';
 use Data::Dmp;
 
 sub serialize {
-    my $self = shift;
-
-    dmp(shift);
+    my ($self, $val) = @_;
+    dmp($val);
 }
 
 sub deserialize {
-    my $self = shift;
+    my ($self, $val) = @_;
 
-    my $res = eval shift;
+    my $res = eval $val;
     die "Data::Serializer error: $@\twhile evaluating:\n $val" if $@;
     $res;
 }
 
 1;
-# ABSTRACT:
+# ABSTRACT: Bridge between Data::Serializer and Data::Dmp
 
 =head1 SYNOPSIS
 
